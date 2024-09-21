@@ -1,0 +1,40 @@
+# one user, two terminals, at the same time.
+# Should not succeed in loggin in.
+
+# commands:
+create sama 1234 10000
+login sama 1234
+quit
+*
+
+# expected output:
+# Terminal 1 succeeds to create user
+Created user sama
+Logged in as sama
+Goodbye
+|
+# Terminal 1 fails to create user because user was created (Term2)
+Failed to create user
+Logged in as sama
+Goodbye
+*
+
+##################### Concurrently executed commands: #####################
+
+# commands:
+create sama 1234 10000
+login sama 1234
+quit
+*
+
+# expected output:
+# Terminal 2 fails due to the user already being created
+Failed to create user
+Logged in as sama
+Goodbye
+|
+# Terminal 2 succeeds in creating user
+Created user sama
+Logged in as sama
+Goodbye
+*

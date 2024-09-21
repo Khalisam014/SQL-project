@@ -1,0 +1,13 @@
+{
+  "java.jdt.ls.java.home": "C:/Users/khali/jdk-11.0.0.1",
+    "java.configuration.runtimes": [
+    {
+        "name": "JavaSE-11",
+        "path": "C:/Users/khali/jdk-11.0.0.1",
+        "default": true
+    }
+    ]
+}
+
+
+

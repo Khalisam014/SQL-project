@@ -1,0 +1,17 @@
+#commands to execute:
+create user5 123 12
+login user5 123
+create user5 123 12
+login user5 123
+quit
+*
+
+#expected output:
+Created user user5
+Logged in as user5
+Failed to create user
+User already logged in
+Goodbye
+*
+
+

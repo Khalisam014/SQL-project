@@ -1,0 +1,83 @@
+# Created at 2024-03-03T21:17:07.966
+Exiting self fork JVM. Received SHUTDOWN command from Maven shutdown hook.
+Thread dump before exiting the process (22368@DESKTOP-8U20TK3):
+"main" 
+   java.lang.Thread.State: RUNNABLE
+        at java.base@11.0.17/java.util.Arrays.fill(Arrays.java:3389)
+        at java.base@11.0.17/sun.security.provider.SHA.implReset(SHA.java:86)
+        at java.base@11.0.17/sun.security.provider.DigestBase.engineReset(DigestBase.java:179)
+        at java.base@11.0.17/sun.security.provider.DigestBase.engineUpdate(DigestBase.java:112)
+        at java.base@11.0.17/java.security.MessageDigest$Delegate.engineUpdate(MessageDigest.java:623)
+        at java.base@11.0.17/java.security.MessageDigest.update(MessageDigest.java:355)
+        at java.base@11.0.17/com.sun.crypto.provider.HmacCore.engineDoFinal(HmacCore.java:223)
+        at java.base@11.0.17/javax.crypto.Mac.doFinal(Mac.java:581)
+        at java.base@11.0.17/javax.crypto.Mac.doFinal(Mac.java:624)
+        at java.base@11.0.17/com.sun.crypto.provider.PBKDF2KeyImpl.deriveKey(PBKDF2KeyImpl.java:192)
+        at java.base@11.0.17/com.sun.crypto.provider.PBKDF2KeyImpl.<init>(PBKDF2KeyImpl.java:117)
+        at java.base@11.0.17/com.sun.crypto.provider.PBKDF2Core.engineGenerateSecret(PBKDF2Core.java:69)
+        at java.base@11.0.17/javax.crypto.SecretKeyFactory.generateSecret(SecretKeyFactory.java:344)
+        at app//flightapp.PasswordUtils.hashWithSalt(PasswordUtils.java:100)
+        at app//flightapp.PasswordUtilsTest.testDifferentInputsProduceDifferentOutputs(PasswordUtilsTest.java:97)
+        at java.base@11.0.17/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base@11.0.17/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at java.base@11.0.17/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base@11.0.17/java.lang.reflect.Method.invoke(Method.java:566)
+        at app//junit.framework.TestCase.runTest(TestCase.java:177)
+        at app//junit.framework.TestCase.runBare(TestCase.java:142)
+        at app//junit.framework.TestResult$1.protect(TestResult.java:122)
+        at app//junit.framework.TestResult.runProtected(TestResult.java:142)
+        at app//junit.framework.TestResult.run(TestResult.java:125)
+        at app//junit.framework.TestCase.run(TestCase.java:130)
+        at app//junit.framework.TestSuite.runTest(TestSuite.java:241)
+        at app//junit.framework.TestSuite.run(TestSuite.java:236)
+        at app//org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+        at app//org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+        at app//org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+        at app//org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+        at app//org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+"Reference Handler" 
+   java.lang.Thread.State: RUNNABLE
+        at java.base@11.0.17/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+        at java.base@11.0.17/java.lang.ref.Reference.processPendingReferences(Reference.java:241)
+        at java.base@11.0.17/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:213)
+
+"Finalizer" 
+   java.lang.Thread.State: WAITING
+        at java.base@11.0.17/java.lang.Object.wait(Native Method)
+        at java.base@11.0.17/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+        at java.base@11.0.17/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:176)
+        at java.base@11.0.17/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:170)
+
+"Signal Dispatcher" 
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" 
+   java.lang.Thread.State: RUNNABLE
+
+"Common-Cleaner" 
+   java.lang.Thread.State: TIMED_WAITING
+        at java.base@11.0.17/java.lang.Object.wait(Native Method)
+        at java.base@11.0.17/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+        at java.base@11.0.17/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:148)
+        at java.base@11.0.17/java.lang.Thread.run(Thread.java:829)
+        at java.base@11.0.17/jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:161)
+
+"surefire-forkedjvm-command-thread" 
+   java.lang.Thread.State: RUNNABLE
+        at java.management@11.0.17/sun.management.ThreadImpl.getThreadInfo1(Native Method)
+        at java.management@11.0.17/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:197)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.generateThreadDump(ForkedBooter.java:649)
+        at app//org.apache.maven.surefire.booter.ForkedBooter.access$400(ForkedBooter.java:82)
+        at app//org.apache.maven.surefire.booter.ForkedBooter$4.update(ForkedBooter.java:340)
+        at app//org.apache.maven.surefire.booter.CommandReader$CommandRunnable.callListeners(CommandReader.java:423)
+        at app//org.apache.maven.surefire.booter.CommandReader$CommandRunnable.exitByConfiguration(CommandReader.java:435)
+        at app//org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:388)
+        at java.base@11.0.17/java.lang.Thread.run(Thread.java:829)
+
+
+

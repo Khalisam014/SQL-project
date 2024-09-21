@@ -1,0 +1,5 @@
+#How many hours you spent on M2 (do not include M0+M1)
+-- Way too long (around 30 hours)
+#How many hours you perceived to be valuable
+-- 10 hours
+

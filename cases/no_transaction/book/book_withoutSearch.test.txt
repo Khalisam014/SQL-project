@@ -1,0 +1,15 @@
+# Attempt to book a flight without searching
+
+# commands to execute:
+create user3 password 10000
+login user3 password
+book 0
+quit
+*
+
+# expected output:
+Created user user3
+Logged in as user3
+No such itinerary 0
+Goodbye
+*

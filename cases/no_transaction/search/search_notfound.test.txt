@@ -1,0 +1,10 @@
+# commands:
+search "London" "Seattle WA" 12 33 4
+quit
+*
+
+# expected command output:
+No flights match your selection
+Goodbye
+*
+

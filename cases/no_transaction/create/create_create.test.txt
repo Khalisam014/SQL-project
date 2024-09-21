@@ -1,0 +1,14 @@
+
+# commands to execute:
+create user10 user1 100
+create user10 user10 100
+quit
+*
+
+# expected output from those commands:
+Created user user10
+Failed to create user
+Goodbye
+*
+
+

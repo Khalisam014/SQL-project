@@ -1,0 +1,21 @@
+
+# commands to execute:
+pay 1
+create user30 user1 100000
+login user30 user1
+pay 1
+pay 1
+pay 1
+quit
+*
+
+# expected output:
+Cannot pay, not logged in
+Created user user30
+Logged in as user30
+Cannot find unpaid reservation 1 under user: user30
+Cannot find unpaid reservation 1 under user: user30
+Cannot find unpaid reservation 1 under user: user30
+Goodbye
+*
+
